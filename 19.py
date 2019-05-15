@@ -37,7 +37,7 @@ def kodol(msg):
         if i != " ":
             c+=szotar[i]+" "
         else:
-            c+=" "
+            c+="    "
     return c
 
 def dekodol(morse):
@@ -51,16 +51,23 @@ def dekodol(morse):
             szoveg += dekszotar[c]
             c = ""
             if index < len(morse) - 2:
-                if morse[index: index + 2] == "  ":
+                if morse[index: index + 4] == "    ":
                     szoveg += " "
 
     return szoveg
 
-szoveg="Ma jo napom van"
-a=kodol(szoveg)
-b=dekodol(a)
-print(a)
-print(b)
+def main():
+    a=input("Kodol/Dekodol")
+    if a == "Kodol":
+        b=input("Adja meg a szöveget: ")
+        e=kodol(b)
+        print(e)
+    elif a == "Dekodol":
+        d=input("Adja meg a morze kódot: ")
+        f=dekodol(d)
+        print(f)
+
+main()
 
 
 
